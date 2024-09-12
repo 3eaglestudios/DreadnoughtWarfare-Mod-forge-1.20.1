@@ -13,6 +13,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlockEntities;
 import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlocks;
 import net.threeeaglestudios.dreadnoughtwarfare.item.ModCreativeModTabs;
 import net.threeeaglestudios.dreadnoughtwarfare.item.ModItems;
@@ -37,6 +38,8 @@ public class DreadnoughtWarfare
         ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in
