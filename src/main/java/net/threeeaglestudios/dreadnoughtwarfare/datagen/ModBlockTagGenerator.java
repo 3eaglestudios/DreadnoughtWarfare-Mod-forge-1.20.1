@@ -21,14 +21,21 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE);
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.KALPIUM_BLOCK.get(),
+                        ModBlocks.RAW_KALPIUM_BLOCK.get());
+
 
 
         this.tag(Tags.Blocks.NEEDS_WOOD_TOOL);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL);
 
-        this.tag(BlockTags.NEEDS_IRON_TOOL);
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.KALPIUM_BLOCK.get(),
+                        ModBlocks.RAW_KALPIUM_BLOCK.get(),
+                        ModBlocks.KALPIUM_ORE.get(),
+                        ModBlocks.KALPIUM_DEEPSLATE_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
 

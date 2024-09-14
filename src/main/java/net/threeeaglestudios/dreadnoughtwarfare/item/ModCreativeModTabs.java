@@ -26,7 +26,16 @@ public class ModCreativeModTabs {
                         //Items
 
                         //Blocks
+                        pOutput.accept(ModBlocks.KALPIUM_ORE.get());
+                        pOutput.accept(ModBlocks.KALPIUM_DEEPSLATE_ORE.get());
+                        pOutput.accept(ModBlocks.RAW_KALPIUM_BLOCK.get());
+                        pOutput.accept(ModBlocks.KALPIUM_BLOCK.get());
+
+
+                        //Custom
                         pOutput.accept(ModBlocks.HELLENIUM_KINGDOM_FLAG.get());
+
+
 
                         //pOutput.accept(ModItems.EXAMPLE.get())
 

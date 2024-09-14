@@ -18,6 +18,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        blockWithItem(ModBlocks.KALPIUM_BLOCK);
+        blockWithItem(ModBlocks.RAW_KALPIUM_BLOCK);
+        blockWithItem(ModBlocks.KALPIUM_ORE);
+        blockWithItem(ModBlocks.KALPIUM_DEEPSLATE_ORE);
+
 //       blockWithItem(ModBlocks.HELLENIUM_KINGDOM_FLAG);
 //
 //

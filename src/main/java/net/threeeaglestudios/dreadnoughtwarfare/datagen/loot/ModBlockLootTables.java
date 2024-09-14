@@ -24,6 +24,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
 
         this.dropSelf(ModBlocks.HELLENIUM_KINGDOM_FLAG.get());
+        this.dropSelf(ModBlocks.KALPIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.RAW_KALPIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.KALPIUM_ORE.get());
+        this.dropSelf(ModBlocks.KALPIUM_DEEPSLATE_ORE.get());
 
 
 

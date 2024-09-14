@@ -1,9 +1,11 @@
 package net.threeeaglestudios.dreadnoughtwarfare.block;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +25,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> HELLENIUM_KINGDOM_FLAG = registerBlock("hellenium_kingdom_flag",
             () -> new HelleniumKingdomFlag(BlockBehaviour.Properties.of()
                     .strength(4)));
+
+    public static final RegistryObject<Block> KALPIUM_BLOCK = registerBlock("kalpium_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistryObject<Block> RAW_KALPIUM_BLOCK = registerBlock("raw_kalpium_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistryObject<Block> KALPIUM_ORE = registerBlock("kalpium_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(2,5)));
+
+    public static final RegistryObject<Block> KALPIUM_DEEPSLATE_ORE = registerBlock("kalpium_deepslate_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(2,5)));
+
 
 
 

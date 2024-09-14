@@ -15,6 +15,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.threeeaglestudios.dreadnoughtwarfare.DreadnoughtWarfare;
+import net.threeeaglestudios.dreadnoughtwarfare.item.ModItems;
 
 import java.util.LinkedHashMap;
 
@@ -39,6 +40,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        simpleItem(ModItems.KALPIUM_INGOT);
+        simpleItem(ModItems.RAW_KALPIUM);
 
         //simpleItem(ModItems./*Eatable Item ? */);
         //simpleItem(ModItems./*Unique Item PlaceHolder - Item ? */);
