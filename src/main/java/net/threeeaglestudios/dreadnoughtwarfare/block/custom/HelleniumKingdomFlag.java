@@ -16,7 +16,7 @@ import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlockEntities;
 import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlocks;
 import software.bernie.example.registry.BlockEntityRegistry;
 
-public class HelleniumKingdomFlag extends DirectionalBlock implements EntityBlock {
+public class HelleniumKingdomFlag extends Block implements EntityBlock {
 
     public HelleniumKingdomFlag(Properties p_52591_) {
         super(p_52591_);
@@ -33,14 +33,14 @@ public class HelleniumKingdomFlag extends DirectionalBlock implements EntityBloc
         return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
-    }
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
-    }
+//    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+//        builder.add(FACING);
+//    }
+//
+//    @Nullable
+//    @Override
+//    public BlockState getStateForPlacement(BlockPlaceContext context) {
+//        return defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
+//    }
 
 }
