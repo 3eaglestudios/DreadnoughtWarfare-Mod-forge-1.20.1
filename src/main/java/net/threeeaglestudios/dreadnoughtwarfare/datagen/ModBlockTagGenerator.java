@@ -23,7 +23,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.KALPIUM_BLOCK.get(),
-                        ModBlocks.RAW_KALPIUM_BLOCK.get());
+                        ModBlocks.RAW_KALPIUM_BLOCK.get(),
+                        ModBlocks.KALPIUM_ORE.get(),
+                        ModBlocks.KALPIUM_DEEPSLATE_ORE.get(),
+                        ModBlocks.TORZENITE_BLOCK.get(),
+                        ModBlocks.TORZENITE_ORE.get(),
+                        ModBlocks.TORZENITE_DEEPSLATE_ORE.get(),
+                        ModBlocks.RAW_TORZENITE.get());
 
 
 

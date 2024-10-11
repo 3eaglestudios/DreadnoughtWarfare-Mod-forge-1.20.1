@@ -22,6 +22,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_KALPIUM_BLOCK);
         blockWithItem(ModBlocks.KALPIUM_ORE);
         blockWithItem(ModBlocks.KALPIUM_DEEPSLATE_ORE);
+        blockWithItem(ModBlocks.TORZENITE_BLOCK);
+        blockWithItem(ModBlocks.TORZENITE_ORE);
+        blockWithItem(ModBlocks.TORZENITE_DEEPSLATE_ORE);
+        blockWithItem(ModBlocks.RAW_TORZENITE);
 
 //       blockWithItem(ModBlocks.HELLENIUM_KINGDOM_FLAG);
 //

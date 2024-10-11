@@ -25,11 +25,21 @@ public class ModCreativeModTabs {
 
                         //Items
 
+                        pOutput.accept(ModItems.RAW_KALPIUM.get());
+                        pOutput.accept(ModItems.KALPIUM_INGOT.get());
+                        pOutput.accept(ModItems.RAW_TORZENITE.get());
+                        pOutput.accept(ModItems.TORZENITE_INGOT.get());
+
+
                         //Blocks
                         pOutput.accept(ModBlocks.KALPIUM_ORE.get());
                         pOutput.accept(ModBlocks.KALPIUM_DEEPSLATE_ORE.get());
                         pOutput.accept(ModBlocks.RAW_KALPIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.KALPIUM_BLOCK.get());
+                        pOutput.accept(ModBlocks.TORZENITE_ORE.get());
+                        pOutput.accept(ModBlocks.TORZENITE_DEEPSLATE_ORE.get());
+                        pOutput.accept(ModBlocks.RAW_TORZENITE.get());
+                        pOutput.accept(ModBlocks.TORZENITE_BLOCK.get());
 
 
                         //Custom

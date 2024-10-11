@@ -43,6 +43,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.KALPIUM_INGOT);
         simpleItem(ModItems.RAW_KALPIUM);
+        simpleItem(ModItems.TORZENITE_INGOT);
+        simpleItem(ModItems.RAW_TORZENITE);
 
         //simpleItem(ModItems./*Eatable Item ? */);
         //simpleItem(ModItems./*Unique Item PlaceHolder - Item ? */);

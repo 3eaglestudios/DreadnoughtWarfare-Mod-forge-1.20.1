@@ -20,5 +20,4 @@ public class ModBlockEntities {
         BLOCK_ENTITIES.register(eventBus);
     }
 
-
 }

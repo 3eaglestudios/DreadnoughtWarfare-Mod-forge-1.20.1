@@ -40,6 +40,19 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(2,5)));
 
+    public static final RegistryObject<Block> TORZENITE_ORE = registerBlock("torzenite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(2,5)));
+
+    public static final RegistryObject<Block> TORZENITE_DEEPSLATE_ORE = registerBlock("torzenite_deepslate_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(3f).requiresCorrectToolForDrops(), UniformInt.of(2,5)));
+
+    public static final RegistryObject<Block> TORZENITE_BLOCK = registerBlock("torzenite_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+
+    public static final RegistryObject<Block> RAW_TORZENITE = registerBlock("raw_torzenite_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
 
 
 

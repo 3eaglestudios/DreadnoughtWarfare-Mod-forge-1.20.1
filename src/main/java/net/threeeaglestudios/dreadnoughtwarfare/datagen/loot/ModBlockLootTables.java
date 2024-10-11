@@ -28,7 +28,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_KALPIUM_BLOCK.get());
         this.dropSelf(ModBlocks.KALPIUM_ORE.get());
         this.dropSelf(ModBlocks.KALPIUM_DEEPSLATE_ORE.get());
-
+        this.dropSelf(ModBlocks.TORZENITE_BLOCK.get());
+        this.dropSelf(ModBlocks.TORZENITE_ORE.get());
+        this.dropSelf(ModBlocks.TORZENITE_DEEPSLATE_ORE.get());
+        this.dropSelf(ModBlocks.RAW_TORZENITE.get());
 
 
     }

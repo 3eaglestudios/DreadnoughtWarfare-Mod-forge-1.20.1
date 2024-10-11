@@ -19,7 +19,11 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_KALPIUM_ORE_KEY = registerKey("titanium_ore");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_KALPIUM_DEEPSLATE_ORE_KEY = registerKey("deepslate_titanium_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_KALPIUM_DEEPSLATE_ORE_KEY = registerKey("titanium_deepslate_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TORZENITE_ORE_KEY = registerKey("torzenite_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TORZENITE_DEEPSLATE_ORE_KEY = registerKey("torzenite_deepslate_ore");
 
 
 
@@ -28,17 +32,30 @@ public class ModConfiguredFeatures {
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
 
-        List<OreConfiguration.TargetBlockState> overworldTitaniumOres = List.of(OreConfiguration.target(stoneReplaceables,
+        List<OreConfiguration.TargetBlockState> overworldKalpiumOres = List.of(OreConfiguration.target(stoneReplaceables,
                 ModBlocks.KALPIUM_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_KALPIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 14));
+        register(context, OVERWORLD_KALPIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldKalpiumOres, 14));
 
         OreConfiguration.target(deepslateReplaceables, ModBlocks.KALPIUM_DEEPSLATE_ORE.get().defaultBlockState());
 
-        List<OreConfiguration.TargetBlockState> overworldDeepslateTitaniumOres = List.of(OreConfiguration.target(deepslateReplaceables,
+        List<OreConfiguration.TargetBlockState> overworldKalpiumDeepslateOres = List.of(OreConfiguration.target(deepslateReplaceables,
                 ModBlocks.KALPIUM_DEEPSLATE_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_KALPIUM_DEEPSLATE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldDeepslateTitaniumOres, 12));
+        register(context, OVERWORLD_KALPIUM_DEEPSLATE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldKalpiumDeepslateOres, 12));
+
+
+        List<OreConfiguration.TargetBlockState> overworldTorzeniteOres = List.of(OreConfiguration.target(stoneReplaceables,
+                ModBlocks.KALPIUM_ORE.get().defaultBlockState()));
+
+        register(context, OVERWORLD_KALPIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTorzeniteOres, 14));
+
+        OreConfiguration.target(deepslateReplaceables, ModBlocks.KALPIUM_DEEPSLATE_ORE.get().defaultBlockState());
+
+        List<OreConfiguration.TargetBlockState> overworldTorzeniteDeepslateOres = List.of(OreConfiguration.target(deepslateReplaceables,
+                ModBlocks.KALPIUM_DEEPSLATE_ORE.get().defaultBlockState()));
+
+        register(context, OVERWORLD_KALPIUM_DEEPSLATE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTorzeniteDeepslateOres, 12));
 
             //register... Nether | etc. ...
     }

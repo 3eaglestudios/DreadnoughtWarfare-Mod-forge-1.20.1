@@ -16,6 +16,8 @@ import net.threeeaglestudios.dreadnoughtwarfare.DreadnoughtWarfare;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_KALPIUM_ORE = registerKey("add_kalpium_ore");
     public static final ResourceKey<BiomeModifier> ADD_KALPIUM_DEEPSLATE_ORE = registerKey("add_kalpium_deepslate_ore");
+    public static final ResourceKey<BiomeModifier> ADD_TORZENITE_ORE = registerKey("add_torzenite_ore");
+    public static final ResourceKey<BiomeModifier> ADD_TORZENITE_DEEPSLATE_ORE = registerKey("add_torzenite_deepslate_ore");
 
 
     //register... Nether | etc. ...
@@ -33,6 +35,16 @@ public class ModBiomeModifiers {
         context.register(ADD_KALPIUM_DEEPSLATE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placeFeatures.getOrThrow(ModPlacedFeatures.KALPIUM_DEEPSLATE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_TORZENITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placeFeatures.getOrThrow(ModPlacedFeatures.TORZENITE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_TORZENITE_DEEPSLATE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placeFeatures.getOrThrow(ModPlacedFeatures.TORZENITE_DEEPSLATE_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 

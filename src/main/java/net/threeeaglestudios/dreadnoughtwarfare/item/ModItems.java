@@ -22,6 +22,13 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_KALPIUM = ITEMS.register("raw_kalpium",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> TORZENITE_INGOT = ITEMS.register("torzenite",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> RAW_TORZENITE = ITEMS.register("raw_torzenite",
+            () -> new Item(new Item.Properties()));
+
+
 
 
 
