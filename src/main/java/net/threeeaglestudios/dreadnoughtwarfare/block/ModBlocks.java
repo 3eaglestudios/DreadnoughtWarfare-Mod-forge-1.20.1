@@ -24,7 +24,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> HELLENIUM_KINGDOM_FLAG = registerBlock("hellenium_kingdom_flag",
             () -> new HelleniumKingdomFlag(BlockBehaviour.Properties.of()
-                    .strength(4)));
+                    .strength(4).noOcclusion()));
 
     public static final RegistryObject<Block> KALPIUM_BLOCK = registerBlock("kalpium_block",
             () -> new Block(BlockBehaviour.Properties.of()));

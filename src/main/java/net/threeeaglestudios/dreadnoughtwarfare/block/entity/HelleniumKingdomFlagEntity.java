@@ -17,7 +17,7 @@ public class HelleniumKingdomFlagEntity extends BlockEntity implements GeoBlockE
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     // We statically instantiate our RawAnimations for efficiency, consistency, and error-proofing
-    private static final RawAnimation HELLENIUM_KINGDOM_FLAG_ANIMS = RawAnimation.begin().thenLoop("hellenium_kingdom_flag.idle");
+    private static final RawAnimation HELLENIUM_KINGDOM_FLAG_ANIMS = RawAnimation.begin().thenLoop("hellenium_kingdom_flag");
 
     public HelleniumKingdomFlagEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.HELLENIUM_KINGDOM_FLAG.get(), pos, state);

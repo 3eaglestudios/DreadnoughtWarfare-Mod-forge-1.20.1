@@ -11,9 +11,9 @@ import net.threeeaglestudios.dreadnoughtwarfare.client.renderer.block.HelleniumK
 import software.bernie.geckolib.model.DefaultedBlockGeoModel;
 
 public class HelleniumKingdomFlagModel extends DefaultedBlockGeoModel<HelleniumKingdomFlagEntity> {
-    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_MODEL = buildFormattedModelPath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "geo/hellenium_kingdom_flag.geo.json"));
-    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_TEXTURE = buildFormattedTexturePath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "textures/block/hellenium_kingdom_flag.png"));
-    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_ANIMATIONS = buildFormattedAnimationPath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "animations/hellenium_kingdom_flag.animation.json"));
+    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_MODEL = buildFormattedModelPath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "hellenium_kingdom_flag"));
+    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_TEXTURE = buildFormattedTexturePath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "hellenium_kingdom_flag"));
+    private final ResourceLocation HELLENIUM_KINGDOM_FLAG_ANIMATIONS = buildFormattedAnimationPath(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "hellenium_kingdom_flag"));
 
     public HelleniumKingdomFlagModel() {
         super(new ResourceLocation(DreadnoughtWarfare.MOD_ID, "hellenium_kingdom_flag"));
