@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dreadnought_w:block/raw_torzenite_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dreadnought_w:item/raw_torzenite"
+  }
+}
