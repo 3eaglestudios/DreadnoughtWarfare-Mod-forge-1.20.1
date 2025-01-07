@@ -1,2 +1,10 @@
-// 1.20.1	2024-09-10T22:10:25.5276133	Loot Tables
+// 1.20.1	2025-01-07T15:04:32.2653075	Loot Tables
 1619d7bfb3c29c02c464eba42a707b552b073a81 data/dreadnought_w/loot_tables/blocks/hellenium_kingdom_flag.json
+552a85f6853f9f638eb0254a45f4c7203065b5a9 data/dreadnought_w/loot_tables/blocks/kalpium_block.json
+750ac8f69919e4e7ad2c8831d415bfdcd10e0115 data/dreadnought_w/loot_tables/blocks/kalpium_deepslate_ore.json
+9db1aac308439ae71a4306b22b4c8d8ba45b88e8 data/dreadnought_w/loot_tables/blocks/kalpium_ore.json
+48125edb0c04963bd63c25c406538ba9f57e4cf9 data/dreadnought_w/loot_tables/blocks/raw_kalpium_block.json
+60cee1f493af435e2d3a99ee5d38d87bd820764f data/dreadnought_w/loot_tables/blocks/raw_torzenite_block.json
+17bf414856e6c5fc43380a4389dd9ed477989097 data/dreadnought_w/loot_tables/blocks/torzenite_block.json
+7d7b72a07d6be55edab8fb02d9c0db68b9da8b45 data/dreadnought_w/loot_tables/blocks/torzenite_deepslate_ore.json
+d4244f3397aca56bf8d17977df52fabcb086495f data/dreadnought_w/loot_tables/blocks/torzenite_ore.json

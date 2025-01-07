@@ -26,6 +26,10 @@ public class ModBlocks {
             () -> new HelleniumKingdomFlag(BlockBehaviour.Properties.of()
                     .strength(4).noOcclusion()));
 
+//    public static final RegistryObject<Block> ITALY_FLAG = registerBlock("italy_flag",
+//            () -> new HelleniumKingdomFlag(BlockBehaviour.Properties.of()
+//                    .strength(4).noOcclusion()));
+
     public static final RegistryObject<Block> KALPIUM_BLOCK = registerBlock("kalpium_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
@@ -51,7 +55,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> TORZENITE_BLOCK = registerBlock("torzenite_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
-    public static final RegistryObject<Block> RAW_TORZENITE = registerBlock("raw_torzenite_block",
+    public static final RegistryObject<Block> RAW_TORZENITE_BLOCK = registerBlock("raw_torzenite_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
 

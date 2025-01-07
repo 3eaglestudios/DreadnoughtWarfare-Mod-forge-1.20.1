@@ -25,7 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.TORZENITE_BLOCK);
         blockWithItem(ModBlocks.TORZENITE_ORE);
         blockWithItem(ModBlocks.TORZENITE_DEEPSLATE_ORE);
-        blockWithItem(ModBlocks.RAW_TORZENITE);
+        blockWithItem(ModBlocks.RAW_TORZENITE_BLOCK);
 
 //       blockWithItem(ModBlocks.HELLENIUM_KINGDOM_FLAG);
 //

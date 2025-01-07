@@ -38,7 +38,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.KALPIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.TORZENITE_ORE.get());
                         pOutput.accept(ModBlocks.TORZENITE_DEEPSLATE_ORE.get());
-                        pOutput.accept(ModBlocks.RAW_TORZENITE.get());
+                        pOutput.accept(ModBlocks.RAW_TORZENITE_BLOCK.get());
                         pOutput.accept(ModBlocks.TORZENITE_BLOCK.get());
 
 

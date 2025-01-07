@@ -1,7 +1,7 @@
-// 1.20.1	2024-09-07T20:22:03.8518595	Tags for minecraft:block mod id dreadnought_w
+// 1.20.1	2025-01-07T15:04:32.2653075	Tags for minecraft:block mod id dreadnought_w
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/blocks/needs_netherite_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/blocks/needs_wood_tool.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/pickaxe.json
+2ec4ff8dbe0f9c9f27da257c8154ae2e5294ac39 data/minecraft/tags/blocks/mineable/pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_diamond_tool.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_iron_tool.json
+4de43a06819020a62b42959c749f867a880d63f1 data/minecraft/tags/blocks/needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json

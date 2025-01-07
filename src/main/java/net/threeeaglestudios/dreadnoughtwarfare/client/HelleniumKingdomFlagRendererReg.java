@@ -10,7 +10,7 @@ import net.threeeaglestudios.dreadnoughtwarfare.client.renderer.block.HelleniumK
 
 @Mod.EventBusSubscriber(modid = DreadnoughtWarfare.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 
-public final class RendererReg {
+public final class HelleniumKingdomFlagRendererReg {
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {

@@ -1,3 +1,12 @@
 {
-  "values": []
+  "values": [
+    "dreadnought_w:kalpium_block",
+    "dreadnought_w:raw_kalpium_block",
+    "dreadnought_w:kalpium_ore",
+    "dreadnought_w:kalpium_deepslate_ore",
+    "dreadnought_w:torzenite_block",
+    "dreadnought_w:torzenite_ore",
+    "dreadnought_w:torzenite_deepslate_ore",
+    "dreadnought_w:raw_torzenite_block"
+  ]
 }

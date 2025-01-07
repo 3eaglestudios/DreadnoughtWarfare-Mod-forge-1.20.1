@@ -29,7 +29,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.TORZENITE_BLOCK.get(),
                         ModBlocks.TORZENITE_ORE.get(),
                         ModBlocks.TORZENITE_DEEPSLATE_ORE.get(),
-                        ModBlocks.RAW_TORZENITE.get());
+                        ModBlocks.RAW_TORZENITE_BLOCK.get());
 
 
 
