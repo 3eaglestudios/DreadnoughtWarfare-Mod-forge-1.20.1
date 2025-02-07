@@ -45,6 +45,9 @@ public class ModCreativeModTabs {
                         //Custom
                         pOutput.accept(ModBlocks.HELLENIUM_KINGDOM_FLAG.get());
 
+                        //Entities
+
+
 
 
                         //pOutput.accept(ModItems.EXAMPLE.get())

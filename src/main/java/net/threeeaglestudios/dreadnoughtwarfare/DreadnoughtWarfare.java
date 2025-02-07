@@ -1,6 +1,8 @@
 package net.threeeaglestudios.dreadnoughtwarfare;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,6 +17,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlockEntities;
 import net.threeeaglestudios.dreadnoughtwarfare.block.ModBlocks;
+import net.threeeaglestudios.dreadnoughtwarfare.entity.ModEntities;
+import net.threeeaglestudios.dreadnoughtwarfare.entity.client.ArtilleryRenderer;
 import net.threeeaglestudios.dreadnoughtwarfare.item.ModCreativeModTabs;
 import net.threeeaglestudios.dreadnoughtwarfare.item.ModItems;
 import org.slf4j.Logger;
@@ -39,6 +43,8 @@ public class DreadnoughtWarfare
         ModBlocks.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in
@@ -69,6 +75,9 @@ public class DreadnoughtWarfare
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntities.ARTILLERY.get(), ArtilleryRenderer::new);
+
         }
     }
 }
