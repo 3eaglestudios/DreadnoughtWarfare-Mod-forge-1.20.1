@@ -36,7 +36,7 @@ public class ArtilleryEntity extends Entity {
     public InteractionResult interact(Player player, InteractionHand hand) {
         if (player.isSecondaryUseActive()) {
             return InteractionResult.PASS;
-        } else if (level().isClientSide) {
+        } else if (!level().isClientSide()) {
             if (player.isPassenger()) return InteractionResult.PASS;
             if (player.startRiding(this)) return InteractionResult.CONSUME;
             return InteractionResult.PASS;
@@ -45,9 +45,17 @@ public class ArtilleryEntity extends Entity {
     }
 
     @Override
+    public boolean isPickable() {
+        return true;
+    }
+
+    @Override
     public LivingEntity getControllingPassenger() {
-        if (getPassengers().size() > 0) return getPassengers().get(0).getControllingPassenger();
-        else return null;
+        if (!getPassengers().isEmpty() && getPassengers().get(0) instanceof LivingEntity entity) {
+            return entity;
+        } else {
+            return null;
+        }
     }
 
     @Override
