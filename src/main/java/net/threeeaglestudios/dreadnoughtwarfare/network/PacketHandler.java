@@ -8,8 +8,8 @@ import net.threeeaglestudios.dreadnoughtwarfare.DreadnoughtWarfare;
 public class PacketHandler {
     public static final SimpleChannel INSTANCE = NetworkRegistry.ChannelBuilder.named(
             new ResourceLocation(DreadnoughtWarfare.MOD_ID, "main"))
-            .serverAcceptedVersions(status, version -> true)
-            .clientAcceptedVersions(status, version -> true)
+            .serverAcceptedVersions((status, version) -> true)
+            .clientAcceptedVersions((status, version) -> true)
             .networkProtocolVersion(1)
             .simpleChannel();
 
