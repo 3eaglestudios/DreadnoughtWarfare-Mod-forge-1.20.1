@@ -10,9 +10,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.threeeaglestudios.dreadnoughtwarfare.DreadnoughtWarfare;
 import net.threeeaglestudios.dreadnoughtwarfare.entity.custom.ArtilleryEntity;
 import net.threeeaglestudios.dreadnoughtwarfare.network.PacketHandler;
+import net.threeeaglestudios.dreadnoughtwarfare.network.ToServerArtilleryShootPacket;
 
 @Mod.EventBusSubscriber(modid = DreadnoughtWarfare.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public final class ClientInputEvents {
+public final class ArtilleryShootTickEvent {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void clientTickPilotControl(TickEvent.ClientTickEvent event) {
         if (event.phase != TickEvent.Phase.START) return;
@@ -25,7 +26,7 @@ public final class ClientInputEvents {
         if (controller == null || !controller.equals(player)) return;
 
         if (mc.mouseHandler.isRightPressed()) {
-            PacketHandler.INSTANCE.sendToServer(new ToServerArtilleryShootPacket(artillery)); // this may be different based on the tutorial video I sent.
+            PacketHandler.INSTANCE.sendToServer(new ToServerArtilleryShootPacket()); // this may be different based on the tutorial video I sent.
         }
     }
 }
