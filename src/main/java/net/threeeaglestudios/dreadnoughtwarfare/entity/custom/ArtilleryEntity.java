@@ -20,6 +20,7 @@ public class ArtilleryEntity extends Entity {
 
     public static AttributeSupplier.Builder createAttributes() {
         return createAttributes().add(Attributes.MAX_HEALTH, 50D)
+                .add(Attributes.ARMOR_TOUGHNESS, 1F)
                 .add(Attributes.MOVEMENT_SPEED, 0.0);
     }
 
