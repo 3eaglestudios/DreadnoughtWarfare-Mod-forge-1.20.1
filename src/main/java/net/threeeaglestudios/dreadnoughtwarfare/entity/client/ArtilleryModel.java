@@ -1,18 +1,18 @@
-package net.threeeaglestudios.dreadnoughtwarfare.entity.client;
-
-// Made with Blockbench 4.11.2
+package net.threeeaglestudios.dreadnoughtwarfare.entity.client;// Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.threeeaglestudios.dreadnoughtwarfare.entity.custom.ArtilleryEntity;
 
 public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel<T> {
@@ -48,7 +48,7 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition Artillery = partdefinition.addOrReplaceChild("Artillery", CubeListBuilder.create(), PartPose.offset(-0.8391F, 15.2029F, -10.3578F));
+		PartDefinition Artillery = partdefinition.addOrReplaceChild("Artillery", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.8391F, 15.2029F, -10.3578F, 0.0F, 0.0F, -3.1416F));
 
 		PartDefinition holders_shield = Artillery.addOrReplaceChild("holders_shield", CubeListBuilder.create(), PartPose.offset(0.8391F, 2.8184F, 3.6507F));
 
