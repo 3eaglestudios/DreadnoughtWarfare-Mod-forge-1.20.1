@@ -6,7 +6,8 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
+import org.joml.Quaternionf;
+import net.minecraft.util.Mth;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.threeeaglestudios.dreadnoughtwarfare.DreadnoughtWarfare;
@@ -31,6 +32,14 @@ public class ArtilleryRenderer extends EntityRenderer<ArtilleryEntity> {
     @Override
     public void render(ArtilleryEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight) {
         poseStack.pushPose();
+
+        float interpolatedPitch = Mth.lerp(partialTicks, entity.xRotO, entity.getXRot());
+
+        Quaternionf yawRotation = new Quaternionf().rotationY((float) Math.toRadians(-entityYaw));
+        Quaternionf pitchRotation = new Quaternionf().rotationX((float) Math.toRadians(interpolatedPitch));
+
+        poseStack.mulPose(yawRotation);
+        poseStack.mulPose(pitchRotation);
 
         VertexConsumer vertexconsumer = multiBufferSource.getBuffer(model.renderType(getTextureLocation(entity)));
         model.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1f, 1f, 1f, 1f);
