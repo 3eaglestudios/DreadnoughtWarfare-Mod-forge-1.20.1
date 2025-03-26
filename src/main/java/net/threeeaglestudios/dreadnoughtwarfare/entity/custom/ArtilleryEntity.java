@@ -19,6 +19,7 @@ import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
@@ -102,14 +103,33 @@ public class ArtilleryEntity extends Entity {
     protected void followControllerHead() {
         Entity controller = getControllingPassenger();
         if (controller == null) return;
-        float newYRot = rotLerp(this.getYRot(), controller.getYRot(), getTurnRate());
-        float newXRot = rotLerp(this.getXRot(), controller.getXRot(), getTurnRate());
+
+        float targetYRot = controller.getYRot();
+        float newYRot = rotLerp(this.getYRot(), targetYRot, getTurnRate());
+
+        float targetXRot = controller.getXRot();
+        float newXRot = Mth.clamp(
+                rotLerp(this.getXRot(), targetXRot, getTurnRate()),
+                -getMaxVerticalAngle(), getMaxVerticalAngle()
+        );
+
         this.setYRot(newYRot);
         this.setXRot(newXRot);
+        this.yRotO = newYRot;
+        this.xRotO = newXRot;
     }
 
     public float getTurnRate() {
-        return 0.5f;
+        return 4.0f;
+    }
+
+    public Vec3 getRiderOffset() {
+        return new Vec3(0.0D, 0.9D, -1.3D);
+    }
+
+
+    public float getMaxVerticalAngle() {
+        return 45.0F;
     }
 
     public static float rotLerp(float currentAngle, float targetAngle, float stepSize) {
@@ -117,6 +137,27 @@ public class ArtilleryEntity extends Entity {
         if (f > stepSize) f = stepSize;
         if (f < -stepSize) f = -stepSize;
         return currentAngle + f;
+    }
+
+    @Override
+    protected void positionRider(Entity passenger, Entity.MoveFunction moveFunction) {
+        if (!this.hasPassenger(passenger)) return;
+
+        Vec3 offset = getRiderOffset();
+
+        float yRotRad = (float) Math.toRadians(this.getYRot());
+        double xOffset = Math.sin(-yRotRad) * offset.z() + Math.cos(yRotRad) * offset.x();
+        double zOffset = Math.cos(yRotRad) * offset.z() + Math.sin(yRotRad) * offset.x();
+
+        double riderX = this.getX() + xOffset;
+        double riderY = this.getY() + offset.y();
+        double riderZ = this.getZ() + zOffset;
+
+        moveFunction.accept(passenger, riderX, riderY, riderZ);
+
+        if (passenger instanceof LivingEntity living) {
+            living.yBodyRot = this.getYRot();
+        }
     }
 
     public static boolean doesPlayerHaveAnArrow(ServerPlayer player) {
@@ -129,14 +170,13 @@ public class ArtilleryEntity extends Entity {
             ItemStack stack = inv.getItem(i);
             if (!stack.is(ItemTags.ARROWS)) continue;
             stack.shrink(1);
-            return; // 1 arrow consumed so exit the loop and the function
+            return;
         }
     }
 
     public static void shootArrow(@NotNull Entity shooter) {
         Level projectileLevel = shooter.level();
-        if (projectileLevel.isClientSide())
-            return;
+        if (projectileLevel.isClientSide()) return;
         Projectile _entityToSpawn = createArrow(projectileLevel, 5, 100, (byte) 10);
         _entityToSpawn.setPos(shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ());
         _entityToSpawn.shoot(shooter.getLookAngle().x, shooter.getLookAngle().y, shooter.getLookAngle().z, 5, 0);
@@ -152,19 +192,11 @@ public class ArtilleryEntity extends Entity {
         return entityToSpawn;
     }
 
-    /**
-     * this function is called from {@link net.threeeaglestudios.dreadnoughtwarfare.network.ToServerArtilleryShootPacket#handle(Supplier)}
-     * it updates {@link #lastShootInputTick}
-     */
     public void onShootInput(@NotNull ServerPlayer player) {
         lastShootInputTick = tickCount;
         if (timingsAllowShoot()) onShoot(player);
     }
 
-    /**
-     * @return true if the player has been shooting for longer than the {@link #getInitialShootDelay()} which
-     * can be thought of as "charge time". then it checks if it can shoot at the fire rate.
-     */
     public boolean timingsAllowShoot() {
         int shootTicks = getShootTicks();
         if (shootTicks < getInitialShootDelay()) {
@@ -175,7 +207,7 @@ public class ArtilleryEntity extends Entity {
     }
 
     public void onShoot(@NotNull ServerPlayer player) {
-        if (!doesPlayerHaveAnArrow(player)) {// check if the player has any arrows
+        if (!doesPlayerHaveAnArrow(player)) {
             return;
         }
         shootArrow(this);
@@ -183,11 +215,6 @@ public class ArtilleryEntity extends Entity {
         lastShootTick = tickCount;
     }
 
-    /**
-     * called in the {@link #tick()} function every tick on the server side.
-     * if the player is shooting it increments the shoot ticks counter.
-     * if the player isn't shooting then it resets the counter to zero.
-     */
     public void tickShoot() {
         if (level().isClientSide()) {
             return;
@@ -211,27 +238,15 @@ public class ArtilleryEntity extends Entity {
         return tickCount - lastShootInputTick < getIsShootingBuffer();
     }
 
-    /**
-     * @return how long after a shoot input isn't received before shooting stops.
-     * I have it set to 10 because it can take up to 10 ticks for a packet to be sent from server to client.
-     * But it could be increased if shoot inputs get lost when playing on a laggy server.
-     */
     public int getIsShootingBuffer() {
         return 10;
     }
 
-    /**
-     * @return time in ticks player has to hold down right click before shooting starts
-     */
     public int getInitialShootDelay() {
         return 2;
     }
 
-    /**
-     * @return time in ticks in between shots
-     */
     public int getShootRate() {
         return 40;
     }
-
 }
