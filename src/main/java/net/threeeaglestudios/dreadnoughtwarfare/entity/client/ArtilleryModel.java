@@ -1,18 +1,17 @@
 package net.threeeaglestudios.dreadnoughtwarfare.entity.client;// Made with Blockbench 4.12.2
+// Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.threeeaglestudios.dreadnoughtwarfare.entity.custom.ArtilleryEntity;
 
 public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel<T> {
@@ -42,20 +41,18 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		this.shield2 = this.Artillery.getChild("shield2");
 	}
 
-	//PARTS ARE NOT MADE FOR ANIMATIONS YET - ! REMEMBER !
-
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition Artillery = partdefinition.addOrReplaceChild("Artillery", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.8391F, 15.2029F, -10.3578F, 0.0F, 0.0F, -3.1416F));
+		PartDefinition Artillery = partdefinition.addOrReplaceChild("Artillery", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.8391F, 15.2029F, -10.3578F, -3.1416F, 0.0F, 0.0F));
 
 		PartDefinition holders_shield = Artillery.addOrReplaceChild("holders_shield", CubeListBuilder.create(), PartPose.offset(0.8391F, 2.8184F, 3.6507F));
 
 		PartDefinition cube_r1 = holders_shield.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(178, 125).addBox(-17.0F, -1.5F, -3.0F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(178, 100).addBox(14.0F, -1.5F, -3.0F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(156, 169).addBox(0.0F, -1.5F, -3.0F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(126, 38).addBox(-20.0F, -2.0F, -1.0F, 39.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.7854F, 0.0F, 0.0F));
+				.texOffs(178, 100).addBox(14.0F, -1.5F, -3.0F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+				.texOffs(156, 169).addBox(0.0F, -1.5F, -3.0F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+				.texOffs(126, 38).addBox(-20.0F, -2.0F, -1.0F, 39.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.7854F, 0.0F, 0.0F));
 
 		PartDefinition gun = Artillery.addOrReplaceChild("gun", CubeListBuilder.create(), PartPose.offset(-0.7314F, -12.8743F, 7.6999F));
 
@@ -64,10 +61,10 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		PartDefinition cube_r3 = gun.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(82, 126).addBox(-1.4F, -1.5516F, -43.7384F, 3.0F, 3.0F, 22.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 7.6F, 27.2238F, -0.0928F, 0.0924F, 0.7811F));
 
 		PartDefinition cube_r4 = gun.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(178, 129).addBox(10.6F, -1.5516F, 14.2616F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(156, 165).addBox(10.6F, -1.5516F, 15.2616F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-		.texOffs(178, 136).addBox(9.6F, -1.5516F, 17.2616F, 1.0F, 1.0F, 1.0F, new CubeDeformation(-0.002F))
-		.texOffs(144, 171).addBox(1.6F, 0.4484F, 15.2616F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(178, 133).addBox(6.6F, -0.5516F, 15.2616F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.002F)), PartPose.offsetAndRotation(3.4F, -1.7F, -1.0F, 0.0F, 0.1309F, 1.5708F));
+				.texOffs(156, 165).addBox(10.6F, -1.5516F, 15.2616F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+				.texOffs(178, 136).addBox(9.6F, -1.5516F, 17.2616F, 1.0F, 1.0F, 1.0F, new CubeDeformation(-0.002F))
+				.texOffs(144, 171).addBox(1.6F, 0.4484F, 15.2616F, 5.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(178, 133).addBox(6.6F, -0.5516F, 15.2616F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.002F)), PartPose.offsetAndRotation(3.4F, -1.7F, -1.0F, 0.0F, 0.1309F, 1.5708F));
 
 		PartDefinition cube_r5 = gun.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(178, 94).addBox(1.6F, -2.5516F, 16.2616F, 0.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.4F, 6.1F, -2.0F, 0.0F, 0.1309F, 1.5708F));
 
@@ -100,8 +97,8 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		PartDefinition cube_r15 = shield.addOrReplaceChild("cube_r15", CubeListBuilder.create().texOffs(144, 173).addBox(-17.3486F, -22.2095F, -7.6947F, 9.0F, 18.0F, 2.0F, new CubeDeformation(-0.01F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.4799F, 0.8132F, -0.3615F));
 
 		PartDefinition cube_r16 = shield.addOrReplaceChild("cube_r16", CubeListBuilder.create().texOffs(174, 105).addBox(-11.3537F, -22.2095F, -0.0329F, 8.0F, 18.0F, 2.0F, new CubeDeformation(0.0F))
-		.texOffs(114, 151).addBox(-3.8537F, -22.2095F, -0.0329F, 6.0F, 4.6F, 2.0F, new CubeDeformation(-0.001F))
-		.texOffs(166, 173).addBox(2.1463F, -22.2095F, -0.0329F, 8.5F, 18.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0928F, 0.4703F, 1.4056F, -0.3229F, 0.0F, 0.0F));
+				.texOffs(114, 151).addBox(-3.8537F, -22.2095F, -0.0329F, 6.0F, 4.6F, 2.0F, new CubeDeformation(-0.001F))
+				.texOffs(166, 173).addBox(2.1463F, -22.2095F, -0.0329F, 8.5F, 18.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0928F, 0.4703F, 1.4056F, -0.3229F, 0.0F, 0.0F));
 
 		PartDefinition cube_r17 = shield.addOrReplaceChild("cube_r17", CubeListBuilder.create().texOffs(114, 158).addBox(-3.8537F, -8.2095F, -0.0329F, 6.0F, 4.0F, 2.0F, new CubeDeformation(-0.001F)), PartPose.offsetAndRotation(0.0938F, 0.471F, 1.4044F, -0.3229F, 0.0F, 0.0F));
 
@@ -110,7 +107,7 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		PartDefinition arty_frame = Artillery.addOrReplaceChild("arty_frame", CubeListBuilder.create(), PartPose.offset(-0.1609F, 2.6971F, 4.3578F));
 
 		PartDefinition cube_r19 = arty_frame.addOrReplaceChild("cube_r19", CubeListBuilder.create().texOffs(178, 65).addBox(-19.0F, -3.0F, -2.0F, 1.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
-		.texOffs(102, 177).addBox(16.0F, -3.0F, -2.0F, 1.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, 0.1213F, -0.7071F, -0.7854F, 0.0F, 0.0F));
+				.texOffs(102, 177).addBox(16.0F, -3.0F, -2.0F, 1.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, 0.1213F, -0.7071F, -0.7854F, 0.0F, 0.0F));
 
 		PartDefinition cube_r20 = arty_frame.addOrReplaceChild("cube_r20", CubeListBuilder.create().texOffs(178, 76).addBox(-8.6F, 1.3F, 59.1F, 3.5F, 4.5F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.4605F, -4.1576F, 3.9113F, -0.0732F, -0.3047F, 0.022F));
 
@@ -137,7 +134,7 @@ public class ArtilleryModel<T extends ArtilleryEntity> extends HierarchicalModel
 		PartDefinition cube_r31 = arty_frame.addOrReplaceChild("cube_r31", CubeListBuilder.create().texOffs(178, 53).addBox(-8.0F, 2.7F, 1.0F, 16.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, -2.8284F, -1.1716F, 0.0F, 0.0F, 0.0F));
 
 		PartDefinition wheels = arty_frame.addOrReplaceChild("wheels", CubeListBuilder.create().texOffs(82, 151).addBox(-21.0F, -7.0F, -6.0F, 3.0F, 13.0F, 13.0F, new CubeDeformation(0.0F))
-		.texOffs(82, 151).addBox(18.0F, -7.0F, -6.0F, 3.0F, 13.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+				.texOffs(82, 151).addBox(18.0F, -7.0F, -6.0F, 3.0F, 13.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition shield2 = Artillery.addOrReplaceChild("shield2", CubeListBuilder.create(), PartPose.offset(0.8391F, -0.1313F, 3.1862F));
 
